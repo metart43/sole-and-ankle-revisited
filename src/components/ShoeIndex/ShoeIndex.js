@@ -47,6 +47,7 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: baseline;
   gap: 32px;
+  color: ${props => console.log(props)};
 `;
 
 const LeftColumn = styled.div`
