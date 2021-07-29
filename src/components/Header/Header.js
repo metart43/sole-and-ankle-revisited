@@ -5,14 +5,10 @@ import { COLORS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
+import MobileHeader from '../MobileHeader';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
 
   return (
     <header>
@@ -30,8 +26,8 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <MobileHeader setShowMobileMenu={setShowMobileMenu} />
       </MainHeader>
-
       <MobileMenu
         isOpen={showMobileMenu}
         onDismiss={() => setShowMobileMenu(false)}
@@ -40,18 +36,32 @@ const Header = () => {
   );
 };
 
+
 const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  @media ${props => props.theme.queries.phoneAndSmaller} {
+    padding: 18px 16px;
+  }
+
+  @media ${props => props.theme.queries.tabletAndSmaller} {
+    border-top: 4px solid ${COLORS.gray[900]};
+  }
 `;
 
 const Nav = styled.nav`
-  display: flex;
-  gap: 48px;
-  margin: 0px 48px;
+
+display: flex;
+gap: 48px;
+margin: 0px 48px;
+
+@media ${props => props.theme.queries.tabletAndSmaller} {
+  display: none;
+}
 `;
 
 const Side = styled.div`
