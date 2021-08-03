@@ -10,12 +10,9 @@ import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  if (!isOpen) {
-    return null;
-  }
   
   return (
-    <Overlay>
+    <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content aria-label="menu">
         <ButtonWrapper>
           <DismissButton onClick={onDismiss}>
@@ -74,7 +71,7 @@ const Content = styled(DialogContent)`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 22px;
+  gap: 16px;
   flex-direction: column;
   margin-left: 32px;
 `;
@@ -87,8 +84,10 @@ const Footer = styled.footer`
 `;
 
 const NavItem = styled.a`
+  text-transform: uppercase;
   font-size: 1.2rem;
   text-decoration: none;
+  font-weight: ${props => props.theme.wieght.medium};
   color: ${props => props.active ? props.theme.colors.secondary : props.theme.colors.gray[900]};
 `;
 
