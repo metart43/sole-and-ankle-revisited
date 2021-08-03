@@ -13,6 +13,10 @@ const Spacer = styled.span`
   min-width: ${getWidth}px;
   height: ${getHeight}px;
   min-height: ${getHeight}px;
+
+  @media ${props => props.theme.queries.tablletAndSmaller} {
+    display: none
+  }
 `;
 
 export default Spacer;

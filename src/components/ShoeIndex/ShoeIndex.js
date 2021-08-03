@@ -48,10 +48,19 @@ const Wrapper = styled.div`
   align-items: baseline;
   gap: 32px;
   color: ${props => console.log(props)};
+
+  @media ${props => props.theme.queries.tabletAndSmaller} {
+    flex-direction: column-reverse;
+    gap: 0px;
+  }
 `;
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
+
+  @media ${props => props.theme.queries.tabletAndSmaller} {
+    flex-basis: revert;
+  }
 `;
 
 const MainColumn = styled.div`
@@ -62,6 +71,10 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+
+  @media ${props => props.theme.queries.tabletAndSmaller} {
+    margin-bottom: 32px;
+  }
 `;
 
 const Title = styled.h2`
