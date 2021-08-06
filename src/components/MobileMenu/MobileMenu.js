@@ -87,7 +87,7 @@ const NavItem = styled.a`
   text-transform: uppercase;
   font-size: 1.2rem;
   text-decoration: none;
-  font-weight: ${props => props.theme.wieght.medium};
+  font-weight: ${props => props.theme.weights.medium};
   color: ${props => props.active ? props.theme.colors.secondary : props.theme.colors.gray[900]};
 `;
 

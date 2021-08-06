@@ -14,8 +14,8 @@ const Spacer = styled.span`
   height: ${getHeight}px;
   min-height: ${getHeight}px;
 
-  @media ${props => props.theme.queries.tablletAndSmaller} {
-    display: none
+  @media ${props => props.theme.queries.tabletAndSmaller} {
+    display: none;
   }
 `;
 
