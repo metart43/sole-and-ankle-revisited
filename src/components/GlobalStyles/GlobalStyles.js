@@ -71,14 +71,15 @@ html {
     Silence the warning about missing Reach Dialog styles
   */
   --reach-dialog: 1;
-  --white: ${props => props.theme.colors.white};
-  --gray-100: ${props => props.theme.colors.gray[100]};
-  --gray-300: ${props => props.theme.colors.gray[300]};
-  --gray-500: ${props => props.theme.colors.gray[500]};
-  --gray-700: ${props => props.theme.colors.gray[700]};
-  --gray-900: ${props => props.theme.colors.gray[900]};
-  --primary-color: ${props => props.theme.colors.primary};
-  --secondary-color: ${props => props.theme.colors.secondary};
+  --white: hsl(${props => props.theme.colors.white});
+  --gray-100: hsl(${props => props.theme.colors.gray[100]});
+  --gray-300: hsl(${props => props.theme.colors.gray[300]});
+  --gray-500: hsl(${props => props.theme.colors.gray[500]});
+  --gray-700: hsl(${props => props.theme.colors.gray[700]});
+  --gray-900: hsl(${props => props.theme.colors.gray[900]});
+  --primary-color: hsl(${props => props.theme.colors.primary});
+  --secondary-color: hsl(${props => props.theme.colors.secondary});
+  --backdrop-gray: hsl(${props => props.theme.colors.gray[700]} / 0.8);
 }
 
 html, body, #root {
